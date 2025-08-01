@@ -150,7 +150,7 @@ class WordHunt(commands.Cog):
             self.logger.error(f"Error saving wordhunt result: {e}")
 
     # ★ NEW: Award points in batches at the end of the game and return award summary
-    async def award_game_points(self, game):
+    async def award_game_points(self, game, guild=None):
         """Award all accumulated points to users at once and return summary for embed"""
         award_summary = []
         try:
@@ -169,12 +169,18 @@ class WordHunt(commands.Cog):
                         # Get user display name safely (prefer guild member display name)
                         user = self.bot.get_user(user_id)
                         if user:
-                            # Try to find guild context for display name
+                            # Try to get guild member for display name (use provided guild first)
                             member = None
-                            for guild in self.bot.guilds:
+                            if guild:
                                 member = guild.get_member(user_id)
-                                if member:
-                                    break
+                            
+                            # If no member found and no guild provided, search all guilds
+                            if not member:
+                                for g in self.bot.guilds:
+                                    member = g.get_member(user_id)
+                                    if member:
+                                        break
+                            
                             if member:
                                 user_name = member.display_name
                             else:
@@ -191,12 +197,18 @@ class WordHunt(commands.Cog):
                         self.logger.error(f"Error awarding points to user {user_id}: {e}")
                         user = self.bot.get_user(user_id)
                         if user:
-                            # Try to find guild context for display name
+                            # Try to get guild member for display name (use provided guild first)
                             member = None
-                            for guild in self.bot.guilds:
+                            if guild:
                                 member = guild.get_member(user_id)
-                                if member:
-                                    break
+                            
+                            # If no member found and no guild provided, search all guilds
+                            if not member:
+                                for g in self.bot.guilds:
+                                    member = g.get_member(user_id)
+                                    if member:
+                                        break
+                            
                             if member:
                                 user_name = member.display_name
                             else:
@@ -336,7 +348,7 @@ class WordHunt(commands.Cog):
         )
         
         # Award accumulated points and get summary
-        award_summary = await self.award_game_points(game)
+        award_summary = await self.award_game_points(game, ctx.guild)
         
         # Add point awards to embed if any were made
         if award_summary:
@@ -491,7 +503,7 @@ class WordHunt(commands.Cog):
         )
         
         # Award accumulated points and get summary
-        award_summary = await self.award_game_points(game)
+        award_summary = await self.award_game_points(game, ctx.guild)
         
         # Add point awards to embed if any were made
         if award_summary:
@@ -583,7 +595,7 @@ class WordHunt(commands.Cog):
             if len(game["found"]) == len(game["words"]):
                 
                 # Award all accumulated points and get summary
-                award_summary = await self.award_game_points(game)
+                award_summary = await self.award_game_points(game, message.guild)
                 
                 embed = discord.Embed(
                     title=f"🎉 {'Easy' if game['mode'] == 'easy' else 'Hard'} Word Hunt Complete!",

@@ -290,7 +290,7 @@ class Unscramble(commands.Cog):
         
         embed = discord.Embed(
             title="Unscramble Game Over",
-            description=msg + f"\n**Total Nyx Notes awarded:** {total_points_earned} 🪙",
+            description=msg,
             color=NYX_COLOR,
         )
         
