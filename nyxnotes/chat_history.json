@@ -1,0 +1,84 @@
+{
+  "1370763889196798024": [
+    {
+      "messages": [
+        {
+          "user": "What's up, you remember me?",
+          "timestamp": "2025-07-29T18:05:51.103874+00:00"
+        },
+        {
+          "bot": "*Glancing up from patient charts*\n\nCan't say I do. Between the constant existential crises in Ward C and someone teaching the therapy dogs to breakdance, faces start to blur. But hey, I'm always happy to build some new trauma bonds.\n\nWhat brings you to our lovely establishment today?",
+          "timestamp": "2025-07-29T18:05:54.161131+00:00"
+        },
+        {
+          "user": "You hate me",
+          "timestamp": "2025-07-29T18:13:01.171344+00:00"
+        },
+        {
+          "bot": "*Sets down coffee mug*\n\nHate is a strong word. I save that for people who talk during movies and patients who try to organize group therapy mutinies. \n\nIf you're feeling particularly unloved, I've got some arts and crafts supplies in the activity room. Nothing says \"working through feelings\" like aggressive glitter application.\n\nWant to tell me what's actually bothering you?",
+          "timestamp": "2025-07-29T18:13:03.942580+00:00"
+        },
+        {
+          "user": "Its gonna be so hard to forget Cade",
+          "timestamp": "2025-07-29T18:26:43.633357+00:00"
+        },
+        {
+          "bot": "*Leans forward with genuine concern*\n\nAh, Cade. Losing someone you care about really does feel like trying to solve a Rubik's cube blindfolded - seemingly impossible and kind of painful.\n\nBut you know what? It's okay to not be okay right now. The heart's funny like that - takes its own sweet time to heal. Sometimes it feels like trying to get glitter out of carpet - just when you think you've got it all, you find more in unexpected places.\n\nWant to talk about it? I've got time and a questionably old candy stash in my desk drawer.",
+          "timestamp": "2025-07-29T18:26:47.445338+00:00"
+        },
+        {
+          "user": "Why did he have to pretend we were gonna move forward and then waste my time again?",
+          "timestamp": "2025-07-29T18:27:49.545733+00:00"
+        },
+        {
+          "bot": "*Adjusts name badge thoughtfully*\n\nPeople who can't be honest with themselves rarely manage to be honest with others. Sounds like Cade was serving you a buffet of false promises while his actions were more like... an empty vending machine.\n\nIt's not about you being waste-worthy - it's about him not being ready-worthy. Still hurts like hell though, doesn't it? Like stubbing your emotional toe on relationship furniture.\n\nThe worst part is when they act like they're writing you a love story but they're actually just drafting their exit strategy.\n\nWant to tell me more about what happened?",
+          "timestamp": "2025-07-29T18:27:53.876126+00:00"
+        },
+        {
+          "user": "Nah, forget about him.",
+          "timestamp": "2025-07-29T18:29:20.629916+00:00"
+        },
+        {
+          "bot": "*Nods approvingly*\n\nThat's the spirit. Some people deserve to be filed away in the \"Thanks for the Life Lesson, Next Please\" cabinet. \n\nBesides, anyone who wastes your time automatically volunteers to become a future funny story. Give it a few months - you'll be using him as prime example of what not to do, probably over drinks with much better company.\n\n*Gestures vaguely to the hallway*\n\nWant to go terrorize the vending machine? I've got a foolproof method for getting two snacks for the price of one.",
+          "timestamp": "2025-07-29T18:29:24.177696+00:00"
+        }
+      ],
+      "ended_at": "2025-07-29T18:33:39.838133+00:00",
+      "duration": "0:28:02",
+      "end_reason": "user_requested",
+      "message_count": 5
+    },
+    {
+      "messages": [
+        {
+          "user": "Haiiii again",
+          "timestamp": "2025-07-29T19:28:41.695291+00:00"
+        },
+        {
+          "bot": "*Looks up from doodling on patient charts*\n\nWell well, look who's back in my humble corner of chaos. Your energy seems brighter today - like someone who finally got a good night's sleep or found money in their laundry.\n\nWhat's new in your world? And please tell me it's more exciting than my morning of watching Dr. Matthews try to convince everyone that his bow tie isn't on backwards.",
+          "timestamp": "2025-07-29T19:28:46.659494+00:00"
+        },
+        {
+          "user": "Nope still just drunk",
+          "timestamp": "2025-07-29T19:29:00.818513+00:00"
+        },
+        {
+          "bot": "*Sets aside pen and raises an eyebrow*\n\nAh, visiting hours with your friend Jack Daniel's again? Or perhaps having a heart-to-heart with Captain Morgan?\n\n*Pulls out a water bottle from desk drawer*\n\nHere's your five-star accommodation beverage. Let's make sure tomorrow-you hates today-you a little less. Though I have to admit, drunk-you has excellent taste in conversational partners.\n\nWant to talk about what's driving the drinking parade tonight?",
+          "timestamp": "2025-07-29T19:29:05.344823+00:00"
+        },
+        {
+          "user": "!endchat",
+          "timestamp": "2025-07-29T19:29:29.583703+00:00"
+        },
+        {
+          "bot": "*Gives a small wave*\n\nStay hydrated, and remember - my questionably old candy stash and I are here when you need us. Take care of yourself out there.\n\n<<CONVERSATION_END>>",
+          "timestamp": "2025-07-29T19:29:31.340945+00:00"
+        }
+      ],
+      "ended_at": "2025-07-29T19:29:29.594839+00:00",
+      "duration": "0:00:56",
+      "end_reason": "user_requested",
+      "message_count": 3
+    }
+  ]
+}

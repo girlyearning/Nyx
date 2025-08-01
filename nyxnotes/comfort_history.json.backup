@@ -1,0 +1,142 @@
+{
+  "1370763889196798024": [
+    {
+      "mode": "anxiety",
+      "messages": [
+        {
+          "user": "I'm worried this code isn't gonna work",
+          "timestamp": "2025-07-29T10:48:47.814947+00:00"
+        },
+        {
+          "bot": "I'm here to listen and support you. Please continue sharing what's on your mind.",
+          "timestamp": "2025-07-29T10:48:48.251634+00:00"
+        },
+        {
+          "user": "Uhhh what should I do",
+          "timestamp": "2025-07-29T10:49:00.545469+00:00"
+        },
+        {
+          "bot": "I'm here to listen and support you. Please continue sharing what's on your mind.",
+          "timestamp": "2025-07-29T10:49:00.798099+00:00"
+        },
+        {
+          "user": "What",
+          "timestamp": "2025-07-29T10:49:25.457823+00:00"
+        },
+        {
+          "bot": "I'm here to listen and support you. Please continue sharing what's on your mind.",
+          "timestamp": "2025-07-29T10:49:25.764049+00:00"
+        }
+      ],
+      "ended_at": "2025-07-29T10:53:59.070192+00:00",
+      "duration": "0:05:36",
+      "end_reason": "user_requested"
+    },
+    {
+      "mode": "anger",
+      "messages": [
+        {
+          "user": "I just want this bot to work",
+          "timestamp": "2025-07-29T12:02:17.980034+00:00"
+        },
+        {
+          "bot": "*Adjusts nurse scrubs*\n\nOh honey, I FEEL you! These dang machines can be absolute garbage sometimes. Makes me want to throw my computer out the window when the hospital systems crash 😤\n\nIt's totally valid to be frustrated. Tech should just WORK, right?! \n\nWant to vent more about it? I'm here to validate your tech rage!",
+          "timestamp": "2025-07-29T12:02:21.007410+00:00"
+        },
+        {
+          "user": "What should I do",
+          "timestamp": "2025-07-29T12:02:53.261023+00:00"
+        },
+        {
+          "bot": "*Pulls up a chair*\n\nFirst, take a deep breath - not because you need to \"calm down\" (your frustration is 100% justified), but because you deserve a moment before dealing with this nonsense.\n\nYou've got a few options:\n1. Step away for 5 mins (grab a snack, curse the tech gods)\n2. Try one more time (sometimes these things are just stubborn)\n3. Find a workaround (pen and paper never crashes! 😉)\n\nWant me to help you figure out which feels right? I'm team \"whatever works for YOU\" here!",
+          "timestamp": "2025-07-29T12:02:57.204710+00:00"
+        },
+        {
+          "user": "!endchat",
+          "timestamp": "2025-07-29T12:03:20.276243+00:00"
+        },
+        {
+          "bot": "Thanks for chatting! Hope you're feeling a bit better about things. Take care! *Waves goodbye with stethoscope* 👋",
+          "timestamp": "2025-07-29T12:03:22.211022+00:00"
+        }
+      ],
+      "ended_at": "2025-07-29T12:04:06.728280+00:00",
+      "duration": "0:02:11",
+      "end_reason": "user_requested"
+    },
+    {
+      "mode": "suicide",
+      "messages": [
+        {
+          "user": "I never thought this would happen between him and I again",
+          "timestamp": "2025-07-29T12:04:39.816863+00:00"
+        },
+        {
+          "bot": "I hear that pain in your voice. Those moments when trust gets broken again... it really hits different the second time around, doesn't it? Want to tell me more about what's going on?",
+          "timestamp": "2025-07-29T12:04:41.708289+00:00"
+        },
+        {
+          "user": "!endcomfort",
+          "timestamp": "2025-07-29T12:05:01.721406+00:00"
+        },
+        {
+          "bot": "I understand this conversation needs to end. Take good care of yourself. Remember you can always reach out again if you need support. Wishing you well. 💜",
+          "timestamp": "2025-07-29T12:05:04.695395+00:00"
+        }
+      ],
+      "ended_at": "2025-07-29T12:05:04.699516+00:00",
+      "duration": "0:00:41",
+      "end_reason": "user_requested"
+    }
+  ],
+  "544326044879159296": [
+    {
+      "mode": "depression",
+      "messages": [
+        {
+          "user": "Im a little down in the dumps because of some prior context with my ex. I miss her, but i shouldn't. She isn't worth my time nor do i want to give it to her, but i haven't pictured myself with anyone else",
+          "timestamp": "2025-07-29T16:20:14.969363+00:00"
+        },
+        {
+          "bot": "*adjusts nurse cap thoughtfully*\n\nI hear you - breakup brain is like having your heart and mind playing tug-of-war. It's completely normal to miss someone even when you know they're not right for you. Your feelings are valid, even if they feel frustrating right now.\n\nYou know what's actually pretty awesome though? The fact that you can recognize she isn't worth your time. That's some healthy self-awareness right there! Even if your heart hasn't caught up with your head yet.\n\nThink of it like having a favorite coffee shop that started serving terrible coffee - you might miss how it used to be, but that doesn't mean you should keep drinking bad coffee, right? Sometimes we need to let our taste buds (or in this case, our hearts) adjust to the idea of finding a new favorite spot.\n\nWould you like to talk more about what's on your mind? I'm here to listen without judgment.",
+          "timestamp": "2025-07-29T16:20:21.344494+00:00"
+        },
+        {
+          "user": "It was fun with her, and she made times go by quickly. I think i may have even had less worries. It's just a shame things didn't work out, i really don't know how to move on.",
+          "timestamp": "2025-07-29T16:21:47.118340+00:00"
+        },
+        {
+          "bot": "*sits down with a gentle smile*\n\nIsn't it something how certain people can make time feel like it's on fast-forward? Those memories are precious, even if they now come with a side of ouch. It's like having a really great TV show that ended too soon - you're grateful for the good episodes, but saying goodbye is tough.\n\nYou know, moving on isn't a straight line - it's more like trying to untangle Christmas lights. Some days you make progress, other days you find another knot. And that's okay! Everyone's \"moving on\" timeline looks different.\n\nCan I suggest something small? When those memories pop up, try adding \"...and that's okay\" to the end of your thoughts. Like \"I miss the fun times...and that's okay\" or \"I'm not ready to date yet...and that's okay.\" It's a tiny way to be gentler with yourself.\n\nWould you like to share what kind of things helped you worry less back then? Maybe we can find ways to recreate some of that peace, just for you this time.",
+          "timestamp": "2025-07-29T16:21:52.328207+00:00"
+        },
+        {
+          "user": "I didn't worry much about stress or real problems, it was easier when there were two people to solve one problem.",
+          "timestamp": "2025-07-29T16:23:31.584976+00:00"
+        },
+        {
+          "bot": "*nods understandingly while making a quick note*\n\nAh yes, having a built-in problem-solving buddy - it's like having a permanent player 2 in life's video game. Going back to single-player mode can feel pretty overwhelming at first. \n\nYou know what though? Think about how many problems you've already solved on your own before you met her. You had those skills all along - they might just be a bit rusty from taking a backseat for a while. It's like riding a bicycle... a problem-solving bicycle? *chuckles* Okay, maybe that metaphor needs work!\n\nLet's start small: Is there a particular challenge you're facing right now that feels extra heavy to handle solo? Sometimes just talking it through with someone (even a quirky nurse like me) can help break it down into more manageable pieces.\n\nRemember: Having someone to lean on is wonderful, but you're stronger than you think on your own. You're not just Player 2's sidekick - you're the main character in your own story!",
+          "timestamp": "2025-07-29T16:23:37.627120+00:00"
+        },
+        {
+          "user": "I lack proper mental, emotional, and physical stimulation, so i constantly yearn for more",
+          "timestamp": "2025-07-29T16:26:09.179407+00:00"
+        },
+        {
+          "bot": "*adjusts glasses thoughtfully*\n\nAh, that's a really insightful observation about yourself. It's like having a high-performance engine idling in neutral - you've got all this potential energy but no clear direction to channel it.\n\n*pulls out a small notepad*\n\nLet's break this down:\n- Mental stimulation: Have you considered picking up a new skill? Something that makes your brain do little backflips - could be learning a language, solving puzzles, or even trying to understand why people enjoy pineapple on pizza 😄\n\n- Emotional stimulation: This is trickier because relationships give us such concentrated doses of feelings. Maybe start with building deeper connections with friends or finding communities that share your interests?\n\n- Physical stimulation: Not to sound like a typical nurse, but physical activity is amazing for filling all these gaps! Plus, endorphins are like nature's mood boosters - they don't ghost you or leave you on read 😉\n\nThe key is not trying to fill all these gaps at once - that's like trying to drink from three water fountains simultaneously (trust me, I've seen patients try weirder things!). Which area feels most pressing to you right now?",
+          "timestamp": "2025-07-29T16:26:15.592780+00:00"
+        },
+        {
+          "user": "Emotional stimulation. I have all these raging emotions like passion, anger, lust and sadness and they run rampant on my psyche. I want to stablize that better.",
+          "timestamp": "2025-07-29T16:29:12.117005+00:00"
+        },
+        {
+          "bot": "*leans forward with interest*\n\nAh, the emotional roller coaster - when your feelings feel like they're playing pinball inside your head. Having intense emotions isn't a bad thing - it means you're deeply human and alive - but I hear you about wanting to find some balance.\n\n*takes thoughtful pause*\n\nHave you ever tried journaling? And I don't mean \"Dear Diary\" stuff - I'm talking about raw, unfiltered emotional dumping. It's like giving your feelings their own mosh pit where they can go wild without wreaking havoc on the rest of your life. Sometimes just getting them out of your head and onto paper helps them lose some of their power.\n\nAnother thing that might help - and stay with me here - is mindfulness. I know, I know, it sounds like one of those trendy wellness buzzwords, but it's basically just being a curious observer of your emotions rather than getting swept away by them. Like watching a storm from inside a cozy house instead of standing in the rain.\n\nWould you like to explore some specific techniques for dealing with particular emotions? Which one tends to be the most overwhelming?",
+          "timestamp": "2025-07-29T16:29:17.896308+00:00"
+        }
+      ],
+      "ended_at": "2025-07-29T17:30:55.377365+00:00",
+      "duration": "1:12:53",
+      "end_reason": "user_requested"
+    }
+  ]
+}
