@@ -166,27 +166,8 @@ class WordHunt(commands.Cog):
                     try:
                         new_total = await self.memory.add_nyx_notes(user_id, total_points)
                         
-                        # Get user display name safely (prefer guild member display name)
-                        user = self.bot.get_user(user_id)
-                        if user:
-                            # Try to get guild member for display name (use provided guild first)
-                            member = None
-                            if guild:
-                                member = guild.get_member(user_id)
-                            
-                            # If no member found and no guild provided, search all guilds
-                            if not member:
-                                for g in self.bot.guilds:
-                                    member = g.get_member(user_id)
-                                    if member:
-                                        break
-                            
-                            if member:
-                                user_name = member.display_name
-                            else:
-                                user_name = user.global_name or user.name
-                        else:
-                            user_name = "Unknown User"
+                        # Get user display name from stored game data
+                        user_name = game.get("user_display_names", {}).get(user_id, "Unknown User")
                         
                         award_summary.append(f"🪙 **{user_name}**: +{total_points:,} Nyx Notes ({words_found} words) → **{new_total:,}** total")
                         
@@ -195,26 +176,8 @@ class WordHunt(commands.Cog):
                         
                     except Exception as e:
                         self.logger.error(f"Error awarding points to user {user_id}: {e}")
-                        user = self.bot.get_user(user_id)
-                        if user:
-                            # Try to get guild member for display name (use provided guild first)
-                            member = None
-                            if guild:
-                                member = guild.get_member(user_id)
-                            
-                            # If no member found and no guild provided, search all guilds
-                            if not member:
-                                for g in self.bot.guilds:
-                                    member = g.get_member(user_id)
-                                    if member:
-                                        break
-                            
-                            if member:
-                                user_name = member.display_name
-                            else:
-                                user_name = user.global_name or user.name
-                        else:
-                            user_name = "Unknown User"
+                        # Get user display name from stored game data
+                        user_name = game.get("user_display_names", {}).get(user_id, "Unknown User")
                         award_summary.append(f"⚠️ **{user_name}**: Error awarding points")
                         
         except Exception as e:
@@ -269,7 +232,8 @@ class WordHunt(commands.Cog):
                 "started_at": datetime.now(timezone.utc),
                 "started_by": ctx.author.id,
                 "user_scores": {},  # NEW: Track points per user {user_id: word_count}
-                "found_by": {}      # NEW: Track who found each word {word: user_id}
+                "found_by": {},     # NEW: Track who found each word {word: user_id}
+                "user_display_names": {}  # Store display names during game
             }
 
             # Create embed - DON'T SHOW THE WORDS!
@@ -424,7 +388,8 @@ class WordHunt(commands.Cog):
                 "started_at": datetime.now(timezone.utc),
                 "started_by": ctx.author.id,
                 "user_scores": {},  # NEW: Track points per user {user_id: word_count}
-                "found_by": {}      # NEW: Track who found each word {word: user_id}
+                "found_by": {},     # NEW: Track who found each word {word: user_id}
+                "user_display_names": {}  # Store display names during game
             }
 
             # Create embed - DON'T SHOW THE WORDS!
@@ -567,6 +532,8 @@ class WordHunt(commands.Cog):
             user_id = message.author.id
             game["user_scores"][user_id] = game["user_scores"].get(user_id, 0) + 1
             game["found_by"][guess] = user_id
+            # Store display name during game (when we have access to message author)
+            game["user_display_names"][user_id] = message.author.display_name
             
             points = 10 if game["mode"] == "easy" else 15
             

@@ -181,7 +181,8 @@ class Unscramble(commands.Cog):
             "active": True,
             "words_played": [],  # Track all words for summary
             "user_scores": {},   # NEW: Track points per user {user_id: word_count}
-            "found_by": {}       # NEW: Track who found each word {word: user_id}
+            "found_by": {},      # NEW: Track who found each word {word: user_id}
+            "user_display_names": {}  # Store display names during game
         }
         
         # Send game announcement
@@ -298,19 +299,8 @@ class Unscramble(commands.Cog):
         if game["user_scores"]:
             user_summary = []
             for user_id, words_found in game["user_scores"].items():
-                user = self.bot.get_user(user_id)
-                if user:
-                    # Try to get guild member for display name
-                    if hasattr(ctx, 'guild') and ctx.guild:
-                        member = ctx.guild.get_member(user_id)
-                        if member:
-                            user_name = member.display_name
-                        else:
-                            user_name = user.global_name or user.name
-                    else:
-                        user_name = user.global_name or user.name
-                else:
-                    user_name = "Unknown User"
+                # Use stored display name from game
+                user_name = game["user_display_names"].get(user_id, "Unknown User")
                 total_earned = words_found * NYX_NOTES_PER_CORRECT
                 user_summary.append(f"**{user_name}**: {total_earned} 🪙")
             
@@ -420,6 +410,8 @@ class Unscramble(commands.Cog):
             # NEW: Track user scoring instead of immediate points
             game["user_scores"][user_id] = game["user_scores"].get(user_id, 0) + 1
             game["found_by"][game["current_word"]] = user_id
+            # Store display name during game (when we have access to message author)
+            game["user_display_names"][user_id] = message.author.display_name
             
             display_name = message.author.display_name
             

@@ -282,6 +282,7 @@ class PrefixGame(commands.Cog):
 
             # ★ Collect responses - FIXED SCORING SYSTEM
             user_words: Dict[int, Set[str]] = {}  # Changed to set to avoid duplicates per user
+            user_display_names: Dict[int, str] = {}  # Store display names during game
             longest_word = ""
             longest_user_id = None
             
@@ -316,6 +317,9 @@ class PrefixGame(commands.Cog):
                         # Initialize user's word set if not exists
                         if user_id not in user_words:
                             user_words[user_id] = set()
+                        
+                        # Store display name during game (when we have access to message author)
+                        user_display_names[user_id] = msg.author.display_name
                         
                         # Add word to user's set (automatically handles duplicates)
                         user_words[user_id].add(word)
@@ -384,31 +388,8 @@ class PrefixGame(commands.Cog):
                 except Exception as e:
                     self.logger.error(f"Error awarding points: {e}")
 
-            # ★ Get winner name - Use display name from guild member
-            winner_name = "Unknown User"
-            try:
-                # Try to get member from guild first for display name
-                if ctx.guild:
-                    winner = ctx.guild.get_member(longest_user_id)
-                    if winner:
-                        winner_name = winner.display_name
-                    else:
-                        # Fallback to cached user lookup
-                        winner = self.bot.get_user(longest_user_id)
-                        if winner:
-                            winner_name = winner.global_name or winner.name
-                        else:
-                            winner_name = "Unknown User"
-                else:
-                    # No guild context, use cached user lookup
-                    winner = self.bot.get_user(longest_user_id)
-                    if winner:
-                        winner_name = winner.global_name or winner.name
-                    else:
-                        winner_name = "Unknown User"
-            except Exception as e:
-                self.logger.warning(f"Failed to get winner name for {longest_user_id}: {e}")
-                winner_name = "Unknown User"
+            # ★ Get winner name - Use stored display name from game
+            winner_name = user_display_names.get(longest_user_id, "Unknown User")
 
             # ★ Create results embed
             results_embed = discord.Embed(
@@ -455,28 +436,8 @@ class PrefixGame(commands.Cog):
                 player_list = []
                 
                 for i, (uid, score) in enumerate(top_players):
-                    try:
-                        # Try to get member from guild first for display name
-                        if ctx.guild:
-                            user = ctx.guild.get_member(uid)
-                            if user:
-                                user_name = user.display_name
-                            else:
-                                # Fallback to cached user lookup
-                                user = self.bot.get_user(uid)
-                                if user:
-                                    user_name = user.global_name or user.name
-                                else:
-                                    user_name = "Unknown User"
-                        else:
-                            # No guild context, use cached user lookup
-                            user = self.bot.get_user(uid)
-                            if user:
-                                user_name = user.global_name or user.name
-                            else:
-                                user_name = "Unknown User"
-                    except:
-                        user_name = "Unknown User"
+                    # Use stored display name from game
+                    user_name = user_display_names.get(uid, "Unknown User")
                     
                     medal = "🥇" if i == 0 else "🥈" if i == 1 else "🥉"
                     word_count = len(user_words[uid])
