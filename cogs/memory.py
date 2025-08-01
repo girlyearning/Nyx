@@ -274,10 +274,18 @@ class Memory(commands.Cog):
                 try:
                     user = self.bot.get_user(user_id)  # This is cache-only, no API call
                     if user:
-                        # Try to get guild member for display name first
+                        # Try to get guild member for display name (use current guild first)
                         member = None
-                        if hasattr(ctx, 'guild') and ctx.guild:
+                        if ctx.guild:
                             member = ctx.guild.get_member(user_id)
+                        
+                        # If no member found in current guild, search other guilds
+                        if not member:
+                            for guild in self.bot.guilds:
+                                member = guild.get_member(user_id)
+                                if member:
+                                    break
+                        
                         if member:
                             name = member.display_name
                         else:
