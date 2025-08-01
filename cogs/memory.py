@@ -269,26 +269,23 @@ class Memory(commands.Cog):
             
             description_lines = []
             for i, (user_id, points) in enumerate(leaderboard, 1):
-                # Try to get display name with fallbacks, cache-only (no API calls)
+                # Get user display name - try guild member first, then fallbacks
                 name = "Unknown User"
                 try:
-                    user = self.bot.get_user(user_id)  # This is cache-only, no API call
-                    if user:
-                        # Try to get guild member for display name (use current guild first)
-                        member = None
-                        if ctx.guild:
-                            member = ctx.guild.get_member(user_id)
-                        
-                        # If no member found in current guild, search other guilds
-                        if not member:
-                            for guild in self.bot.guilds:
-                                member = guild.get_member(user_id)
-                                if member:
-                                    break
-                        
+                    # Try to get guild member for display name first
+                    if ctx.guild:
+                        member = ctx.guild.get_member(user_id)
                         if member:
                             name = member.display_name
                         else:
+                            # Fallback to cached user lookup
+                            user = self.bot.get_user(user_id)
+                            if user:
+                                name = user.global_name or user.name
+                    else:
+                        # No guild context, use cached user lookup
+                        user = self.bot.get_user(user_id)
+                        if user:
                             name = user.global_name or user.name
                 except:
                     pass  # Fail silently, keep using "Unknown User"
