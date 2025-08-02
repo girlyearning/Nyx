@@ -193,8 +193,8 @@ async def load_cogs():
         logger.error("❌ Cogs directory not found!")
     
     cog_files = [
-        "memory.py", "comfort.py", "prefixgame.py", 
-        "unscramble.py", "wordhunt.py", "workshop.py", "asylumchat.py"
+        "memory.py", "nyxtasks.py", "comfort.py", "prefixgame.py", 
+        "unscramble.py", "wordhunt.py", "workshop.py", "asylumchat.py", "alliteration.py"
     ]
     
     loaded = 0
