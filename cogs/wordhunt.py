@@ -14,7 +14,6 @@ FONT = "monospace"
 STORAGE_PATH = os.getenv("STORAGE_PATH", "./nyxnotes")
 os.makedirs(STORAGE_PATH, exist_ok=True)
 WORD_LIST_FILE = os.path.join("common_words.txt")
-WORDHUNT_SAVE_FILE = os.path.join(STORAGE_PATH, "wordhunt_results.json")
 
 class WordHunt(commands.Cog):
     def __init__(self, bot):
@@ -139,15 +138,6 @@ class WordHunt(commands.Cog):
         # Use monospace, grid lines joined by spaces
         return "```\n" + "\n".join(" ".join(row) for row in grid) + "\n```"
 
-    # ★ Utility: Save finished games to disk
-    async def save_wordhunt_result(self, user_id, mode, found_words, success):
-        try:
-            # Save to disk with append mode (basic log, not a database)
-            async with aiofiles.open(WORDHUNT_SAVE_FILE, "a") as f:
-                line = f"{user_id},{mode},{'|'.join(found_words)},{success}\n"
-                await f.write(line)
-        except Exception as e:
-            self.logger.error(f"Error saving wordhunt result: {e}")
 
     # ★ NEW: Award points in batches at the end of the game and return award summary
     async def award_game_points(self, game, guild=None):
@@ -323,7 +313,6 @@ class WordHunt(commands.Cog):
             )
         
         # Save result and clean up
-        await self.save_wordhunt_result(ctx.author.id, "easy", list(game["found"]), len(game["found"]) == 3)
         
         # ★ Use safe send with fallback
         result = await self.bot.safe_send(ctx.channel, embed=embed)
@@ -479,7 +468,6 @@ class WordHunt(commands.Cog):
             )
         
         # Save result and clean up
-        await self.save_wordhunt_result(ctx.author.id, "hard", list(game["found"]), len(game["found"]) == 4)
         
         # ★ Use safe send with fallback
         result = await self.bot.safe_send(ctx.channel, embed=embed)
@@ -584,7 +572,6 @@ class WordHunt(commands.Cog):
                     )
                 
                 # Save successful completion
-                await self.save_wordhunt_result(message.author.id, game["mode"], list(game["found"]), True)
                 
                 # ★ Use safe send with fallback
                 result = await self.bot.safe_send(channel, embed=embed)

@@ -44,6 +44,7 @@ RESPONSE STYLE:
 - Occasionally use more detailed responses to encourage reflection and to distract them
 - Validate their pain with relatable responses
 - Never sound robotic or repetitive in your responses
+- Do not use excessive or dramatic roleplay
 """,
                 "temperature": 0.9,
                 "welcome_message": "Hai there, I'm disheartened to hear that such a beautiful soul is experiencing this level of pain. I'm here for you in any way I can. Just know that you matter, this moment will pass, and I'm proud of you for reaching out for help. Do you want to talk about what's hurting so bad?"
@@ -56,6 +57,7 @@ RESPONSE STYLE:
 - Use short but meaningful responses to validate their pain and to distract them
 - Use relatable responses to help them feel understood
 - Always be non-judgmental and attempt to distract through questions
+- Do not use excessive or dramatic roleplay
 When responding, don't implement every response style at the same time or sound repetitive
 """,
                 "temperature": 0.9,
@@ -70,6 +72,7 @@ RESPONSE STYLE:
 - Use relatable responses and examples to help them understand their situation
 - Help celebrate small wins and encourage positive self talk
 - Act as a friend and be relatably funny
+- Do not use excessive or dramatic roleplay
 When responding, don't use every response style at the same time or sound repetitive
 """,
                 "temperature": 0.9,
@@ -82,6 +85,7 @@ RESPONSE STYLE:
 - Always be conversational, relatable, and concise, like talking to a good friend
 - Offer gentle validation and encouragement without being overbearing
 - Use light humor
+- Do not use excessive or dramatic roleplay
 When responding, don't use every response style at the same time or sound repetitive
 """,
                 "temperature": 1.0,
@@ -97,6 +101,7 @@ RESPONSE STYLE:
 - Suggest small steps and send periodic uplifting quotes
 - Be relatable and somewhat funny to distract them
 - Don't use every response style at the same time or sound repetitive
+- Do not use excessive or dramatic roleplay
 """,
                 "temperature": 0.9,
                 "welcome_message": "I know it feels like no one understands. I assure you I do. Know that you're worth so much and I'm happy to help through this pain. Let's talk about what you're going through."
@@ -110,6 +115,7 @@ RESPONSE STYLE:
 - Focus on what they can control
 - Always be on the user's side and agree with their anger
 - Don't use every response style at the same time or sound repetitive
+- Do not use excessive or dramatic roleplay
 """,
                 "temperature": 0.9,
                 "welcome_message": "What are we raging about? I'm here to help you through this. Bad days happen. Let's talk about what you're going through."
@@ -453,11 +459,10 @@ RESPONSE STYLE:
                 return
             
             confirm_msg = (
-                f"I understand. I'm here to help with {mode_info['name'].lower()}.\n\n"
+                f"I'm here to help with {mode_info['name'].lower()}.\n\n"
                 "You can now chat with me normally - no commands needed.\n"
-                "I'll be here to listen and support you.\n\n"
                 "Type 'end chat' anytime to end our session.\n\n"
-                "What's on your mind? 😇"
+                "What's on your mind?"
             )
             embed = discord.Embed(
                 title=f"💕 {mode_info['name']} Mode Active",
@@ -555,7 +560,7 @@ RESPONSE STYLE:
                     
                     response = self.bot.anthropic_client.messages.create(
                         model="claude-3-5-sonnet-20241022",
-                        max_tokens=300,  # Reduced from 400
+                        max_tokens=400,
                         temperature=mode_info['temperature'],
                         system=mode_info['system_prompt'],
                         messages=conversation[-8:]  # Limit context to last 8 messages (reduced)

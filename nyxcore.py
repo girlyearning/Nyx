@@ -194,7 +194,7 @@ async def load_cogs():
     
     cog_files = [
         "memory.py", "nyxtasks.py", "comfort.py", "prefixgame.py", 
-        "unscramble.py", "wordhunt.py", "workshop.py", "asylumchat.py", "alliteration.py"
+        "unscramble.py", "wordhunt.py", "workshop.py", "asylumchat.py", "alliteration.py", "asknyx.py"
     ]
     
     loaded = 0
@@ -258,6 +258,7 @@ async def nyx_help(ctx):
 **💬 Chat**
 `!dmcomfort` - Support chat
 `!asylumchat` - Multi-personality chat
+`!asknyx [question]` - Ask questions with web search
 
 **📝 Workshop**
 `!monday` / `!tuesday` / `!thursday` / `!friday` - Daily prompts

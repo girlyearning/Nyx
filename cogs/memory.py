@@ -269,7 +269,7 @@ class Memory(commands.Cog):
             
             description_lines = []
             for i, (user_id, points) in enumerate(leaderboard, 1):
-                # Get user display name - try guild member first, then fallbacks
+                # Get user display name - try guild member first, then fetch user
                 name = "Unknown User"
                 try:
                     # Try to get guild member for display name first
@@ -278,13 +278,15 @@ class Memory(commands.Cog):
                         if member:
                             name = member.display_name
                         else:
-                            # Fallback to cached user lookup
-                            user = self.bot.get_user(user_id)
+                            # Fetch user from Discord API with rate limiting
+                            await asyncio.sleep(1.0)  # Rate limit protection
+                            user = await self.bot.fetch_user(user_id)
                             if user:
                                 name = user.global_name or user.name
                     else:
-                        # No guild context, use cached user lookup
-                        user = self.bot.get_user(user_id)
+                        # No guild context, fetch user from Discord API
+                        await asyncio.sleep(1.0)  # Rate limit protection
+                        user = await self.bot.fetch_user(user_id)
                         if user:
                             name = user.global_name or user.name
                 except:
