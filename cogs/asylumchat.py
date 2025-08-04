@@ -508,7 +508,7 @@ You're here to argue, rage-bait, and push buttons. You're chatting in a public c
                     
                     # Generate response using anthropic (matching chat.py pattern)
                     response = self.bot.anthropic_client.messages.create(
-                        model="claude-3-5-sonnet-20241022",
+                        model="claude-sonnet-4-20250514",
                         max_tokens=250,  # Further reduced to prevent long responses
                         temperature=mode_info['temperature'],
                         system=mode_info['system_prompt'],

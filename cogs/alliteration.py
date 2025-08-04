@@ -222,7 +222,7 @@ Examples of INVALID submissions for "people names": "Poopy Pants", "Fart Face", 
 Respond with only "VALID" or "INVALID" followed by a brief reason."""
 
             response = self.bot.anthropic_client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-sonnet-4-20250514",
                 max_tokens=50,
                 temperature=0.3,  # Low temperature for consistent validation
                 messages=[{

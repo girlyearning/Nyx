@@ -194,7 +194,7 @@ async def load_cogs():
     
     cog_files = [
         "memory.py", "nyxtasks.py", "comfort.py", "prefixgame.py", 
-        "unscramble.py", "wordhunt.py", "workshop.py", "asylumchat.py", "alliteration.py", "asknyx.py"
+        "unscramble.py", "wordhunt.py", "workshop.py", "asylumchat.py", "alliteration.py", "asknyx.py", "qotd.py"
     ]
     
     loaded = 0

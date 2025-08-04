@@ -227,7 +227,7 @@ You're Nyx answering questions with the help of current web information while ma
             if hasattr(self.bot, 'anthropic_client') and self.bot.anthropic_client:
                 try:
                     response = self.bot.anthropic_client.messages.create(
-                        model="claude-3-5-sonnet-20241022",
+                        model="claude-sonnet-4-20250514",
                         max_tokens=500,
                         temperature=0.7,
                         system=self.nyx_personality,
