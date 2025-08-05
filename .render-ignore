@@ -1,7 +1,0 @@
-nyx_app/
-flutter/
-*.apk
-__pycache__/
-venv/
-.DS_Store
-*.log
